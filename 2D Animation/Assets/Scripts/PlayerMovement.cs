@@ -13,6 +13,17 @@ public class PlayerMovement : MonoBehaviour {
 	bool jump = false;
 	bool crouch = false;
 
+
+	private void OnGUI() 
+	{
+		// Debug.Log("OnGUI ==> ");
+		if(Input.anyKeyDown && Event.current.keyCode == KeyCode.Space)
+		{
+			jump = true;
+			animator.SetBool("IsJumping", true);
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 
